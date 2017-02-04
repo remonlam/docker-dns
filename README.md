@@ -4,5 +4,4 @@
 docker build -t dns .
 
 ## Run container from image
-docker run --net host -d -p 53:53/udp --name dns dns
-docker run --privileged --net host -d -p 53:53/udp --name dns dns
+docker run -d -p 53:53/udp --name dns dns
