@@ -1,10 +1,11 @@
-FROM alpine:3.5
+FROM containerstack/alpine:3.6.1
 MAINTAINER Remon Lam [remon@containerstack.io]
 
-RUN apk add --update dhcp && \
-    rm -rf /var/cache/apk/*
+RUN apk add --update bind && \
+    rm -rf /var/cache/apk/* && \
+    rm -rf /etc/dnsmasq.conf
 
-COPY named.conf /etc/bind/named.conf
+COPY dnsmasq.conf /etc/dnsmasq.conf
 
 EXPOSE 53/udp 53/tcp
-CMD named -g
+#CMD named -g
