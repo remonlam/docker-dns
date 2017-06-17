@@ -5,7 +5,7 @@ RUN apk add --update bind && \
     rm -rf /var/cache/apk/* && \
     rm -rf /etc/dnsmasq.conf
 
-VOLUME /etc
+VOLUME /etc/bind
 VOLUME /var/named
 
 EXPOSE 53/udp 53/tcp
