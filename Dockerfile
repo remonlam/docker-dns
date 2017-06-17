@@ -5,7 +5,6 @@ RUN apk add --update bind && \
     rm -rf /var/cache/apk/* && \
     rm -rf /etc/dnsmasq.conf
 
-#COPY dnsmasq.conf /etc/dnsmasq.conf
 VOLUME /etc
 VOLUME /var/named
 
