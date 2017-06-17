@@ -1,0 +1,21 @@
+$ORIGIN .
+$TTL 86400      ; 1 day
+containerstack.local            IN SOA  primary.server.com. your.email.address. (
+                            2010122801 ; serial
+                            7200       ; refresh (2 hous)
+                            7200       ; retry (2 hours)
+                            2419200    ; expire (5 weeks 6 days 16 hours)
+                            86400      ; minimum (1 day)
+                            )
+$TTL 14400      ; 4 hours
+                    NS      google-public-dns-a.google.com.
+                    NS      google-public-dns-b.google.com.
+                    A       10.10.150.10 ; If you want to assign a server to your domain
+                   MX      10      mx1 ;
+
+$ORIGIN containerstack.local.
+www                     A       80.100.157.97 ; The IP of your web server if you want to have one.
+mx1         A   10.10.150.101 ; The IP of your mx1 server
+srvdc01     A   10.10.150.100 ; Just a fake node
+srvdc02     A   10.10.150.110 ; Just a fake node
+up2         A   10.10.150.10 ; Just a fake node
