@@ -1,4 +1,4 @@
-FROM containerstack/alpine:3.6.1
+FROM containerstack/alpine-arm:3.6.1
 MAINTAINER Remon Lam [remon@containerstack.io]
 
 RUN apk add --update bind && \
@@ -6,7 +6,7 @@ RUN apk add --update bind && \
     rm -rf /etc/dnsmasq.conf
 
 VOLUME /etc/bind
-VOLUME /var/named
+#VOLUME /var/named
 
 EXPOSE 53/udp 53/tcp
 CMD named -g
